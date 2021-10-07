@@ -20,7 +20,7 @@ const App = () => {
 
     setList(newList);
   };
-
+console.log(list)
   return (
     <C.Container>
       <C.Area>
