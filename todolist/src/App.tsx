@@ -1,12 +1,13 @@
 import { useState } from "react";
 import * as C from "./App.styles";
 import { Item } from "./types/Item";
-import { ListItem } from './components/ListItem'
+import { ListItem } from "./components/ListItem";
+import { AddArea } from "./components/AddArea";
 
 const App = () => {
   const [list, setList] = useState<Item[]>([
     { id: 1, name: "Terminar 5 projetos React", done: false },
-    { id: 2, name: "Comprar bolo na padaria", done: false },
+    { id: 2, name: "Comprar bolo na padaria", done: true },
   ]);
 
   return (
@@ -14,10 +15,10 @@ const App = () => {
       <C.Area>
         <C.Header>Lista de Tarefas</C.Header>
 
-        {/* Área de adicionar nova tarefa */}
+        <AddArea />
 
         {list.map((item, index) => (
-          <ListItem/>
+          <ListItem key={index} item={item} />
         ))}
       </C.Area>
     </C.Container>
